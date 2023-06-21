@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IProduct } from './models/product';
 import { ProductService } from './services/products.service';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -10,19 +10,21 @@ import { Observable } from 'rxjs';
 })
 export class AppComponent implements OnInit{
   title = 'angular education';
-  products:IProduct[]= []
+  // products:IProduct[] = []
   loading=false;
-products$:Observable<IProduct[]>
+  products$:Observable<IProduct[]>
 
   constructor(private productsService: ProductService){
 
   }
   ngOnInit():void{
     this.loading =true
-    this.products$= this.productsService.getAll()
-    this.productsService.getAll().subscribe(products =>{
-      this.products = products   
-      this.loading = false   
-    })
+    this.products$= this.productsService.getAll().pipe(
+      tap(()=>{ this.loading=false})
+    )
+    // this.productsService.getAll().subscribe(products =>{
+    //   this.products = products   
+    //   this.loading = false   
+    // })
   }
 }
