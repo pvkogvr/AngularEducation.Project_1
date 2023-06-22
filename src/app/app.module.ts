@@ -13,7 +13,13 @@ import { CreateProductComponent } from './components/create-product/create-produ
 import { FocusDirective } from './directives/focus.directive';
 @NgModule({
   declarations: [
-    AppComponent, ProductComponent, GlobalErrorComponent, FilterProductsPipe, ModalComponent, CreateProductComponent, FocusDirective
+    AppComponent, 
+    ProductComponent, 
+    GlobalErrorComponent, 
+    FilterProductsPipe, 
+    ModalComponent, 
+    CreateProductComponent, 
+    FocusDirective
   ],
   imports: [
     BrowserModule,
