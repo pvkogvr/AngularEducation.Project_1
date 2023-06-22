@@ -4,3 +4,15 @@ input{
     padding: 5px 10px;
     width: 100%;
 }
+button{
+    border-radius: 100%;
+    background-color: rgba(255, 0, 0, 0.694);
+    font-size: 200%;
+    color: white;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    padding: 4px 17px;
+    padding-bottom: 8px;
+    text-align: center;
+}
